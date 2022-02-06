@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="random.js"></SCript>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container-fluid" style="width: 98vw;">
+            <a class="navbar-brand" href="javascript:void(0)">Home</a>
+            <a class="navbar-brand" href="docs.html">Documentation</a>
+            <a class="navbar-brand" href="edit.html">Try</a>
+            <a class="navbar-brand" href="random.js" style="right: 0;position: absolute;"
+                download="random.js">Download</a>
+        </div>
+    </nav>
+    <div style="display: inline-block; background-color: yellow; width: 100%;">
+        <img src="logo.svg" width="100" height="100"><span style="font-size: 45px;"> <b>=> Generate Random
+                Data</b></span>
+    </div>
+    <h1 style="background-color: rgb(167, 167, 167);">Get Started!</h1>
+    <p>
+        To Get Started include the code in your HTML file <br>
+    <div class="code" style="overflow-x: auto; font-size: 2em; background-color: black;"></div>
+    </p>
+    <h1 style="background-color: rgb(167, 167, 167);">A Brief Look</h1>
+    <p>You Can Use This Library To Create Random Data like <b>Random Strings,Numbers,Emails,Dates</b> or <b>get a
+            Random Data Form An Array</b></p>
+    <div class="division">
+        <p style="margin: 0px;"><b>For Example</b></p>
+        <p style="background-color: rgb(0, 0, 0);"><code
+                class="comment">/*Generate A Random String Within A-Z of length 5*/</code>
+            <code
+                class="code"><span style="color: khaki;">createRandomString</span><span style="color: lightcoral;">(</span><span style="color: orange;">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span><span style="color: whitesmoke;">,</span><span style="color: palegreen;">5</span><span style="color: lightcoral;">)</span></code>
+        <p style="margin: 0px;">returns <code style="background-color: rgba(0, 0, 0, 0); color: violet;" id="c1"></code>
+        </p>
+        </p>
+        <p style="background-color: black;"><code class="comment">/*Get A Random Data From Array*/</code>
+            <br><code
+                class="code"><span style="color: rgb(67, 167, 255);">random</span><span style="color: whitesmoke;">.</span><span style="color: khaki;">array.getData</span><span style="color: lightcoral;">(</span><span style="color: whitesmoke;">[</span><span style="color: orange;">"ant","bat","cat","dot","eat","fat","got","hot"</span><span style="color: whitesmoke;">]</span><span style="color: lightcoral;">)</span></code>
+        <p style="margin: 0px;">returns <code style="background-color: rgba(0, 0, 0, 0); color: violet;" id="c2"></code>
+        </p>
+
+        </p>
+    </div>
+    <style>
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            background-color: rgba(255, 255, 0, 0.2);
+        }
+
+        .division {
+            border: 1px solid #000000;
+            border-radius: 2px;
+            font-size: large;
+            display: grid;
+            overflow: hidden;
+            height: auto;
+        }
+
+        code {
+            width: 90%;
+            height: 20%;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .comment {
+            color: rgb(0, 200, 100);
+        }
+
+        p {
+            font-size: 1.5em;
+            display: block;
+        }
+
+        a {
+            color: rgb(255, 255, 255);
+            font-size: 2em;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: color 0.25s ease-in-out;
+        }
+
+        a:hover {
+            color: rgb(255, 211, 129);
+        }
+
+        .navbar {
+            background-color: rgb(14, 0, 123);
+            height: 2.2em;
+            padding: 1px;
+            position: sticky;
+            top: 0px;
+            width: 100%;
+        }
+
+        #random {
+            background-repeat: none;
+            background-size: 50vw, 50vw;
+            width: 50vw;
+            height: 50vw;
+        }
+    </style>
+</body>
+<script>
+    document.getElementById("c1").innerText = createRandomString("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 5)
+    document.getElementById("c2").innerText = random.array.getData(["ant", "bat", "cat", "dot", "eat", "fat", "got", "hot"])
+    document.querySelector(".code").innerHTML = `<span style="color:blue;">&lt;script</span> <span style="color:aqua;">src=</span><span style="color:orange;">"${location.href.replace("home.html", 'random.js')}"</span><span style="color:blue;">&gt;&lt;/script&gt;</span>`
+</script>
+
+</html>

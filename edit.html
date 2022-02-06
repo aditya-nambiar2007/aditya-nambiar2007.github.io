@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="random.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">Home</a>
+            <a class="navbar-brand" href="docs.html">Documentation</a>
+            <a class="navbar-brand" href="javascript:void(0)">Try</a>
+            <a class="navbar-brand" href="random.js" style="float: right;" download="random.js">Download</a>
+        </div>
+    </nav>
+    <h1>Try Random.js</h1>
+    <div style="display: block;">
+        <textarea class="division" id="code" autocorrect="off"></textarea>
+        <button class="btn" id="run" onclick="run()">Run</button>
+        <div id="result"></div>
+    </div>
+    <style>
+        #result {
+            border: 1px solid #000000;
+            height: 20vh;
+            width: 100vw;
+            padding: 5px;
+            font-size: 2em;
+        }
+
+        h1 {
+            background-color: yellow;
+            margin: 0;
+            height: 2.5em;
+            display: inline-grid;
+            align-content: center;
+            width: 100%;
+        }
+
+        body {
+            margin: 0;
+            overflow: auto;
+        }
+
+        h3,
+        div,
+        p {
+            font-size: 1em;
+        }
+
+        .division {
+            height: 50vh;
+            resize: none;
+            border: 1px solid #000000;
+            border-radius: 2px;
+            font-size: large;
+            display: grid;
+            overflow: auto;
+            width: 100vw;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        a {
+            color: rgb(255, 255, 255);
+            font-size: 2.2em;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.25s;
+        }
+
+        a:hover {
+            color: rgb(255, 211, 129);
+        }
+
+        .navbar {
+            background-color: rgb(14, 0, 123);
+            height: 3em;
+            padding: 1px;
+            position: sticky;
+            top: 0px;
+            width: inherit;
+            z-index: 20;
+        }
+
+        img {
+            height: 3em;
+            margin-right: 15px;
+            cursor: alias;
+        }
+
+        .btn {
+            color: rgb(78, 78, 78);
+            position: relative;
+            display: inline-flex;
+            margin: 0px 20px 0px 0px;
+            font-size: 1.5em;
+            padding: 0px;
+            background-color: rgba(0, 0, 125, 0);
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        .btn:after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            transition: width 0.3s ease;
+            height: 2px;
+            background-color: rgb(78, 78, 78);
+            bottom: 2px;
+        }
+
+        .btn:focus:after {
+            width: 100%;
+        }
+
+        .nav {
+            text-align: center;
+            display: inline-flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .toggle {
+            height: 0;
+            border: 0px;
+        }
+    </style>
+    <script>
+        document.getElementById("code").contentEditable = true
+        function run() {
+            let result = new Function(`return ${document.getElementById("code").value}`)
+            document.getElementById("result").innerText = result()
+        }
+        const autocomplete = ["random.string(len)", "random.int.range(min,max)", "random.int.length(len)", "random.float(min,max)", "random.email(len)", "random.url(len)", "random.array.GetData(array)", "createRandomString(string,len)"]
+        $("#code").autocomplete({ source: autocomplete })</script>
+</body>
+
+</html>
